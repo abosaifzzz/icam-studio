@@ -599,7 +599,7 @@ export default function Home() {
 
 
                         <div className="slide   my-5  bg-transparent px-9 ">
-                            <div className="teacher py-6 bg-[#fafeed] shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
+                            <div className="teacher py-6 bg- shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
                                 <div className="teacher-img w-28 h-28   ">
                                     <img className="rounded-full w-full h-full" src={teacher} alt="" />
                                 </div>
@@ -612,7 +612,7 @@ export default function Home() {
 
                         </div>
                         <div className="slide   my-5  bg-transparent px-9 ">
-                            <div className="teacher py-6 bg-[#fafeed] shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
+                            <div className="teacher py-6 bg- shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
                                 <div className="teacher-img w-28 h-28   ">
                                     <img className="rounded-full w-full h-full" src={teacher} alt="" />
                                 </div>
@@ -625,7 +625,7 @@ export default function Home() {
 
                         </div>
                         <div className="slide   my-5  bg-transparent px-9 ">
-                            <div className="teacher py-6 bg-[#fafeed] shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
+                            <div className="teacher py-6 bg- shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
                                 <div className="teacher-img w-28 h-28   ">
                                     <img className="rounded-full w-full h-full" src={teacher} alt="" />
                                 </div>
@@ -638,7 +638,7 @@ export default function Home() {
 
                         </div>
                         <div className="slide   my-5  bg-transparent px-9 ">
-                            <div className="teacher py-6 bg-[#fafeed] shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
+                            <div className="teacher py-6 bg- shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
                                 <div className="teacher-img w-28 h-28   ">
                                     <img className="rounded-full w-full h-full" src={teacher} alt="" />
                                 </div>
@@ -651,7 +651,7 @@ export default function Home() {
 
                         </div>
                         <div className="slide   my-5  bg-transparent px-9 ">
-                            <div className="teacher py-6 bg-[#fafeed] shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
+                            <div className="teacher py-6 bg- shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
                                 <div className="teacher-img w-28 h-28   ">
                                     <img className="rounded-full w-full h-full" src={teacher} alt="" />
                                 </div>
@@ -664,7 +664,7 @@ export default function Home() {
 
                         </div>
                         <div className="slide   my-5  bg-transparent px-9 ">
-                            <div className="teacher py-6 bg-[#fafeed] shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
+                            <div className="teacher py-6 bg- shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
                                 <div className="teacher-img w-28 h-28   ">
                                     <img className="rounded-full w-full h-full" src={teacher} alt="" />
                                 </div>
@@ -677,7 +677,7 @@ export default function Home() {
 
                         </div>
                         <div className="slide   my-5  bg-transparent px-9 ">
-                            <div className="teacher py-6 bg-[#fafeed] shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
+                            <div className="teacher py-6 bg- shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
                                 <div className="teacher-img w-28 h-28   ">
                                     <img className="rounded-full w-full h-full" src={teacher} alt="" />
                                 </div>
