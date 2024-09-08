@@ -152,56 +152,16 @@ export default function Home() {
     // }
 
 
-    var settings = {
+    const settings = {
         dots: true,
         infinite: true,
         autoplay: true,
-        speed: 2500,
-        autoplaySpeed: 3500,
-        cssEase: "linear",
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        pauseOnHover: true, // Pause autoplay on hover for manual control
-        swipe: true, // Enable swiping for manual control
-        arrows: true,
-        initialSlide: 0,
-        responsive: [
-            {
-                breakpoint: 1024, // Adjusts for medium screens
-                settings: {
-                    slidesToShow: 2, // Show 2 slides
-                },
-            },
-            {
-                breakpoint: 640, // Adjusts for small screens
-                settings: {
-                    slidesToShow: 1, // Show 1 slide
-                },
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    speed: 2500,
-                    autoplaySpeed: 1500,
-                }
-            }
-        ]
-    };
-    // Slider settings
-    const settings2 = {
-        dots: true, // Enable dots for navigation
-        infinite: true,
-        autoplay: true,
-        speed: 5000,
+        speed: 500,
         autoplaySpeed: 4000,
         cssEase: "linear",
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        initialSlide: 0,
-        pauseOnHover: true, // Pause autoplay on hover for manual control
-        swipe: true, // Enable swiping for manual control
+        slidesToShow: 3, // Default number of slides to show
+        slidesToScroll: 3, // Number of slides to scroll
+        pauseOnHover: true, // Pause on hover
         arrows: true, // Enable arrows for manual control
         responsive: [
             {
@@ -218,28 +178,66 @@ export default function Home() {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
-                    initialSlide: 2
                 }
             },
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    speed: 2000,
-                    autoplaySpeed: 2000,
                 }
             }
         ]
     };
+
+    const slidesData = [
+        { imgSrc: falsfa, title: "مادة الفلسفة", teacher: "أ/ هشام ابو السعود" },
+        { imgSrc: french, title: "مادة اللغة الفرنسية", teacher: "مسيو/ هاني اشرف" },
+        { imgSrc: chemistry, title: "مادة الكيمياء", teacher: "أ/ محمود البحيري" },
+        { imgSrc: history, title: "مادة التاريخ", teacher: "أ/ رامي مسعود" },
+        { imgSrc: physics, title: "مادة الفيزياء", teacher: "أ/ خالد عمر" },
+        { imgSrc: english, title: "مادة اللغة الأنجليزية", teacher: "أ/ احمد العشيري" },
+        { imgSrc: math, title: "مادة الرياضة", teacher: "أ/ محمود عبدالرحمن" }
+    ];
+    // Slider settings
+
+    const settings2 = {
+        dots: true,
+        infinite: true,
+        autoplay: true,
+        speed: 500,
+        autoplaySpeed: 4000,
+        cssEase: "linear",
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        pauseOnHover: true, // Pause on hover
+        arrows: true, // Enable arrows for manual control
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
+
     return (<>
 
         <div dir="rtl" className="all w-full mt-10 mx-auto  ">
@@ -258,7 +256,7 @@ export default function Home() {
                     <p className="mt-6 lg:text-3xl md:text-xl text-xl font-bold cairo">    و لأول مرة  <span className="text-green-700"> بالفيوم</span></p>
 
 
-                    <a dir="rtl" className="btn-3 mt-5 p-3 cairo  px-6 rounded-md lg:text-xl text-xl" href="#">
+                    {/* <a dir="rtl" className="btn-3 mt-5 p-3 cairo  px-6 rounded-md lg:text-xl text-xl" href="#">
                         ابدأ الأن
                         <span className="button__icon-wrapper">
                             <svg
@@ -288,7 +286,40 @@ export default function Home() {
                             </svg>
                         </span>
 
-                    </a>
+                    </a> */}
+                    {/* <button className="animated-button mt-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="arr-2" viewBox="0 0 24 24">
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                            ></path>
+                        </svg>  
+                        <span className="text">ابدأ الأن</span>
+
+
+                        <span className="circle"></span>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="arr-1" viewBox="0 0 24 24">
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                            ></path>
+                        </svg>
+                    </button> */}
+                    <button
+                        className="flex justify-center cairo gap-2 mt-5 shadow-xl text-lg bg-green-600 backdrop-blur-md lg:font-semibold border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-white hover:text-black text-white before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-md group"
+                    >
+                        ابدأ الأن
+                        <svg
+                            className="w-8 h-8 justify-end group-hover:-rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-white group-hover:border-none p-2 -rotate-45 transform "
+                            viewBox="0 0 16 19"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+                                className="fill-gray-800 group-hover:fill-gray-800"
+                            ></path>
+                        </svg>
+                    </button>
+
+
 
 
                 </div>
@@ -302,150 +333,33 @@ export default function Home() {
 
                 <div className="courses  w-full px-8  mt-6 ">
                     <Slider {...settings}>
-
-
-                        <div className="slide  my-5  bg-transparent px-11 ">
-                            <div className="course relative py-4 rounded-xl flex flex-col items-center justify-center overflow-hidden bg-white h-full ">
-
-                                <div className="course-img rounded-md w-1/3 ">
-                                    <img className="" src={falsfa} alt="" />
-                                </div>
-                                <p className="messiri z-1 text-xl  mt-3 font-semibold">مادة الفلسفة</p>
-                                <p className="kufi z-1">أ/ هشام ابو السعود</p>
-                                <div className="btn-4 mt-4">
-                                    <div className="button-wrapper">
-                                        <div className="text">تفاصيل أكثر</div>
-                                        <span className="icon">
-                                            <i className="fa-solid fa-arrow-right"></i>
-                                        </span>
+                        {slidesData.map((slide, index) => (
+                            <div className="slide my-5 bg-transparent px-11" key={index}>
+                                <div className="course relative md:mx-10  py-7 rounded-xl flex flex-col items-center justify-center overflow-hidden bg-white h-full">
+                                    <div className="course-img rounded-md w-1/3">
+                                        <img className="" src={slide.imgSrc} alt={slide.title} />
                                     </div>
+                                    <p className="messiri z-1 text-xl mt-3 font-semibold">{slide.title}</p>
+                                    <p className="kufi z-1">{slide.teacher}</p>
+                                    {/* <div className="btn-4 mt-4">
+                                        <div className="button-wrapper">
+                                            <div className="text">تفاصيل أكثر</div>
+                                            <span className="icon">
+                                                <i className="fa-solid fa-arrow-right"></i>
+                                            </span>
+                                        </div>
+                                    </div> */}
+
+                                    <button
+                                        className="relative cairo py-2 px-8 mt-4 text-black text-base font-bold nded-full overflow-hidden bg-white rounded-md transition-all duration-400 ease-in-out shadow-md hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-right-full before:w-full before:h-full before:bg-gradient-to-r before:from-green-500 before:to-green-300 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-md hover:before:right-0"
+                                    >
+                                        تفاصيل اكتر
+
+                                    </button>
+
                                 </div>
                             </div>
-
-
-                        </div>
-                        <div className="slide  my-5  bg-transparent px-11 ">
-                            <div className="course relative py-4 rounded-xl flex flex-col items-center justify-center overflow-hidden bg-white h-full ">
-
-                                <div className="course-img rounded-md w-1/3 ">
-                                    <img className="" src={french} alt="" />
-                                </div>
-                                <p className="messiri z-1 text-xl  mt-3 font-semibold">مادة اللغة الفرنسية</p>
-                                <p className="kufi z-1">مسيو/ هاني اشرف</p>
-                                <div className="btn-4 mt-4">
-                                    <div className="button-wrapper">
-                                        <div className="text">تفاصيل أكثر</div>
-                                        <span className="icon">
-                                            <i className="fa-solid fa-arrow-right"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div className="slide  my-5  bg-transparent px-11 ">
-                            <div className="course relative py-4 rounded-xl flex flex-col items-center justify-center overflow-hidden bg-white h-full ">
-
-                                <div className="course-img rounded-md w-1/3 ">
-                                    <img className="" src={chemistry} alt="" />
-                                </div>
-                                <p className="messiri z-1 text-xl  mt-3 font-semibold">مادة الكيمياء    </p>
-                                <p className="kufi z-1">أ/ محمود البحيري </p>
-                                <div className="btn-4 mt-4">
-                                    <div className="button-wrapper">
-                                        <div className="text">تفاصيل أكثر</div>
-                                        <span className="icon">
-                                            <i className="fa-solid fa-arrow-right"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div className="slide  my-5  bg-transparent px-11 ">
-                            <div className="course relative py-4 rounded-xl flex flex-col items-center justify-center overflow-hidden bg-white h-full ">
-
-                                <div className="course-img rounded-md w-1/3 ">
-                                    <img className="" src={history} alt="" />
-                                </div>
-                                <p className="messiri z-1 text-xl  mt-3 font-semibold">مادة التاريخ</p>
-                                <p className="kufi z-1">أ/ رامي مسعود</p>
-                                <div className="btn-4 mt-4">
-                                    <div className="button-wrapper">
-                                        <div className="text">تفاصيل أكثر</div>
-                                        <span className="icon">
-                                            <i className="fa-solid fa-arrow-right"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div className="slide  my-5  bg-transparent px-11 ">
-                            <div className="course relative py-4 rounded-xl flex flex-col items-center justify-center overflow-hidden bg-white h-full ">
-
-                                <div className="course-img rounded-md w-1/3 ">
-                                    <img className="" src={physics} alt="" />
-                                </div>
-                                <p className="messiri z-1 text-xl  mt-3 font-semibold">مادة الفيزياء</p>
-                                <p className="kufi z-1">أ/ خالد عمر</p>
-                                <div className="btn-4 mt-4">
-                                    <div className="button-wrapper">
-                                        <div className="text">تفاصيل أكثر</div>
-                                        <span className="icon">
-                                            <i className="fa-solid fa-arrow-right"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div className="slide  my-5  bg-transparent px-11 ">
-                            <div className="course relative py-4 rounded-xl flex flex-col items-center justify-center overflow-hidden bg-white h-full ">
-
-                                <div className="course-img rounded-md w-1/3 ">
-                                    <img className="" src={english} alt="" />
-                                </div>
-                                <p className="messiri z-1 text-xl  mt-3 font-semibold">مادة اللغة الأنجليزية</p>
-                                <p className="kufi z-1">أ/ احمد العشيري</p>
-                                <div className="btn-4 mt-4">
-                                    <div className="button-wrapper">
-                                        <div className="text">تفاصيل أكثر</div>
-                                        <span className="icon">
-                                            <i className="fa-solid fa-arrow-right"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div className="slide  my-5  bg-transparent px-11 ">
-                            <div className="course relative py-4 rounded-xl flex flex-col items-center justify-center overflow-hidden bg-white h-full ">
-
-                                <div className="course-img rounded-md w-1/3 ">
-                                    <img className="" src={math} alt="" />
-                                </div>
-                                <p className="messiri z-1 text-xl  mt-3 font-semibold">مادة الرياضة</p>
-                                <p className="kufi z-1">أ/ محمود عبدالرحمن</p>
-                                <div className="btn-4 mt-4">
-                                    <div className="button-wrapper">
-                                        <div className="text">تفاصيل أكثر</div>
-                                        <span className="icon">
-                                            <i className="fa-solid fa-arrow-right"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-
+                        ))}
                     </Slider>
 
 
@@ -633,7 +547,20 @@ export default function Home() {
 
                                 <p className="messiri z-1 text-xl  mt-3 font-semibold ">أ/ هشام ابو السعود</p>
                                 <p className="kufi text-green-700">مادة الفلسفة</p>
-                                <button className="p-1 px-8 text-lg font-medium kufi rounded-md border border-green-700 bg-transparent mt-4">التواصل</button>
+                                <button
+                                    className="mt-5 relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none"
+                                >
+                                    <span
+                                        className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#36ff79_0%,#0fedde_50%,#e3ff8f_100%)]"
+                                    >
+                                    </span>
+                                    <span
+                                        className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
+                                    >
+                                        تفاصيل اكثر
+                                    </span>
+                                </button>
+
                             </div>
 
 
@@ -646,7 +573,20 @@ export default function Home() {
 
                                 <p className="messiri z-1 text-xl  mt-3 font-semibold ">مسيو/ هاني اشرف</p>
                                 <p className="kufi text-green-700">مادة اللغة الفرنسية</p>
-                                <button className="p-1 px-8 text-lg font-medium kufi rounded-md border border-green-700 bg-transparent mt-4">التواصل</button>
+                                <button
+                                    className="mt-5 relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none"
+                                >
+                                    <span
+                                        className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#36ff79_0%,#0fedde_50%,#e3ff8f_100%)]"
+                                    >
+                                    </span>
+                                    <span
+                                        className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
+                                    >
+                                        تفاصيل اكثر
+                                    </span>
+                                </button>
+
                             </div>
 
 
@@ -659,7 +599,20 @@ export default function Home() {
 
                                 <p className="messiri z-1 text-xl  mt-3 font-semibold ">أ/ محمود البحيري </p>
                                 <p className="kufi text-green-700">مادة الكيمياء    </p>
-                                <button className="p-1 px-8 text-lg font-medium kufi rounded-md border border-green-700 bg-transparent mt-4">التواصل</button>
+                                <button
+                                    className="mt-5 relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none"
+                                >
+                                    <span
+                                        className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#36ff79_0%,#0fedde_50%,#e3ff8f_100%)]"
+                                    >
+                                    </span>
+                                    <span
+                                        className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
+                                    >
+                                        تفاصيل اكثر
+                                    </span>
+                                </button>
+
                             </div>
 
 
@@ -672,7 +625,20 @@ export default function Home() {
 
                                 <p className="messiri z-1 text-xl  mt-3 font-semibold ">أ/ رامي مسعود</p>
                                 <p className="kufi text-green-700">مادة التاريخ</p>
-                                <button className="p-1 px-8 text-lg font-medium kufi rounded-md border border-green-700 bg-transparent mt-4">التواصل</button>
+                                <button
+                                    className="mt-5 relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none"
+                                >
+                                    <span
+                                        className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#36ff79_0%,#0fedde_50%,#e3ff8f_100%)]"
+                                    >
+                                    </span>
+                                    <span
+                                        className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
+                                    >
+                                        تفاصيل اكثر
+                                    </span>
+                                </button>
+
                             </div>
 
 
@@ -685,7 +651,20 @@ export default function Home() {
 
                                 <p className="messiri z-1 text-xl  mt-3 font-semibold ">أ/ خالد عمر</p>
                                 <p className="kufi text-green-700">مادة الفيزياء</p>
-                                <button className="p-1 px-8 text-lg font-medium kufi rounded-md border border-green-700 bg-transparent mt-4">التواصل</button>
+                                <button
+                                    className="mt-5 relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none"
+                                >
+                                    <span
+                                        className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#36ff79_0%,#0fedde_50%,#e3ff8f_100%)]"
+                                    >
+                                    </span>
+                                    <span
+                                        className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
+                                    >
+                                        تفاصيل اكثر
+                                    </span>
+                                </button>
+
                             </div>
 
 
@@ -698,7 +677,20 @@ export default function Home() {
 
                                 <p className="messiri z-1 text-xl  mt-3 font-semibold ">أ/ احمد العشيري</p>
                                 <p className="kufi text-green-700">مادة اللغة الأنجليزية</p>
-                                <button className="p-1 px-8 text-lg font-medium kufi rounded-md border border-green-700 bg-transparent mt-4">التواصل</button>
+                                <button
+                                    className="mt-5 relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none"
+                                >
+                                    <span
+                                        className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#36ff79_0%,#0fedde_50%,#e3ff8f_100%)]"
+                                    >
+                                    </span>
+                                    <span
+                                        className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
+                                    >
+                                        تفاصيل اكثر
+                                    </span>
+                                </button>
+
                             </div>
 
 
@@ -711,7 +703,20 @@ export default function Home() {
 
                                 <p className="messiri z-1 text-xl  mt-3 font-semibold ">أ/ محمود عبدالرحمن</p>
                                 <p className="kufi text-green-700">مادة الرياضة</p>
-                                <button className="p-1 px-8 text-lg font-medium kufi rounded-md border border-green-700 bg-transparent mt-4">التواصل</button>
+                                <button
+                                    className="mt-5 relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none"
+                                >
+                                    <span
+                                        className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#36ff79_0%,#0fedde_50%,#e3ff8f_100%)]"
+                                    >
+                                    </span>
+                                    <span
+                                        className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
+                                    >
+                                        تفاصيل اكثر
+                                    </span>
+                                </button>
+
                             </div>
 
 
@@ -724,7 +729,7 @@ export default function Home() {
 
                 </div>
                 <div className="big-label relative w-4/5 mx-auto h-72 rounded-2xl flex bg-white border border-emerald-600">
-                    <div className="line absolute bottom-0  w-1/2  mx-64  rounded-lg h-1.5"></div>
+                    <div className="line absolute bottom-0  md:w-1/2 md:block hidden mx-64  rounded-lg h-1.5"></div>
 
                     <div className="right-round w-1/2 md:flex hidden items-center justify-center  h-full rounded-tl-3xl rounded-tr-2xl">
                         <img className="w-1/2" src={comp} alt="" />
