@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 // import { useStateContext } from "../../contexts/ContextProvider";
 // import axiosClient from "../../axios";
 // import { useEffect } from "react";
+
 import vector from "../../assets/Exams-bro.png"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -18,6 +19,8 @@ import math from "../../assets/math.png"
 import screen from "../../assets/screen.png"
 import teacher from "../../assets/teacher.jpg"
 import comp from "../../assets/comp.png"
+import home from "../../assets/home.png"
+
 
 
 
@@ -33,6 +36,7 @@ import comp from "../../assets/comp.png"
 // import LogoutIcon from "@mui/icons-material/Logout";
 
 export default function Home() {
+
     // const [isMenuOpen, setIsMenuOpen] = useState(false);
     // const { user, setUser, setToken, token } = useStateContext({});
     // const [menuOpen, setMenuOpen] = useState(false); // State to manage the main menu
@@ -180,8 +184,9 @@ export default function Home() {
             }
         ]
     };
-    var settings2 = {
-        dots: false,
+    // Slider settings
+    const settings2 = {
+        dots: true, // Enable dots for navigation
         infinite: true,
         autoplay: true,
         speed: 5000,
@@ -190,6 +195,9 @@ export default function Home() {
         slidesToShow: 4,
         slidesToScroll: 4,
         initialSlide: 0,
+        pauseOnHover: true, // Pause autoplay on hover for manual control
+        swipe: true, // Enable swiping for manual control
+        arrows: true, // Enable arrows for manual control
         responsive: [
             {
                 breakpoint: 1024,
@@ -225,7 +233,6 @@ export default function Home() {
             }
         ]
     };
-
     return (<>
 
         <div dir="rtl" className="all w-full mt-10 mx-auto  ">
@@ -440,7 +447,7 @@ export default function Home() {
 
 
             </div>
-            <div className="fourth mt-14 w-4/5  mx-auto pb-16 gap-10  flex">
+            <div className="fourth flex flex-col items-center w-4/5  mx-auto pb-16 gap-10  ">
                 {/* <div className="right mt-28 w-1/2">
                     <div className="right-data ">
                         <div className="top relative mt-24 w-full rounded-xl h-44  bg-[#3aa259]">
@@ -505,7 +512,20 @@ export default function Home() {
                     </div>
 
                 </div> */}
+                <p className="lg:text-4xl md:text-3xl text-xl mt-10 m-0 kufi font-medium  text-green-600 p-2 ">  من نحن ؟</p>
 
+                <div className="fourth-data flex">
+                    <div className="left w-1/2"><img src={home} alt="" /></div>
+                    <div className="right w-1/2 p-6">
+                        <p className="cairo text-3xl font-bold">عن "ICam"</p>
+                        <p className="cairo text-xl mt-3">استوديو ICAM هو استوديو تعليمي مبتكر متخصص في إنتاج فيديوهات تعليمية تفاعلية عالية الجودة يقدمها أساتذة متخصصون في مختلف المواد الدراسية. يهدف الاستوديو إلى دعم الطلاب في جميع المراحل الدراسية، من المرحلة الابتدائية وحتى الثانوية العامة، وذلك من خلال توفير شروحات واضحة ومبسطة تسهم في تعزيز الفهم والتحصيل الدراسي.
+
+                            يقع استوديو ICAM في محافظة الفيوم، حيث يسعى إلى تسهيل الوصول إلى التعليم المتكامل والمتميز لجميع الطلاب في المنطقة، باستخدام أحدث التقنيات والوسائل التعليمية.</p>
+
+
+
+                    </div>
+                </div>
 
 
 
