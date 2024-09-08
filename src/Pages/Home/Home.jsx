@@ -251,8 +251,8 @@ export default function Home() {
                 <div className="right md:w-1/2 w-full  md:p-12 p-3">
 
                     <p className="lg:text-5xl md:text-3xl text-3xl cairo font-semibold">    تعلم, تطور ,<span className="text-green-500">وفر وقتك</span> </p>
-                    <p className="mt-10 lg:text-5xl md:text-3xl text-3xl cairo font-medium">منصة تعليمية متكاملة </p>
-                    <p className="mt-10 lg:text-5xl md:text-3xl text-3xl     cairo text-white font-semibold p-2 bg-[#2dbc56] w-fit pb-4">فـي مـكـان واحــــــــد </p>
+                    <p className="mt-10 lg:text-5xl md:text-3xl text-2xl cairo font-medium">منصة تعليمية متكاملة </p>
+                    <p className="mt-10 lg:text-5xl md:text-3xl text-2xl    cairo text-white font-semibold p-2 bg-[#2dbc56] w-fit pb-4">فـي مـكـان واحــــــــد </p>
                     <p className="mt-6 lg:text-3xl md:text-xl text-xl font-bold cairo">    و لأول مرة  <span className="text-green-700"> بالفيوم</span></p>
 
 
@@ -304,7 +304,7 @@ export default function Home() {
                         </svg>
                     </button> */}
                     <button
-                        className="flex justify-center cairo gap-2 mt-5 shadow-xl text-lg bg-green-600 backdrop-blur-md lg:font-semibold border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-white hover:text-black text-white before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-md group"
+                        className="flex justify-center cairo gap-2 mt-5 shadow-xl text-lg bg-green-600 backdrop-blur-md lg:font-semibold border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-emerald-300 hover:text-black text-white before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-md group"
                     >
                         ابدأ الأن
                         <svg
