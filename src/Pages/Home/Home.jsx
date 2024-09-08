@@ -161,6 +161,9 @@ export default function Home() {
         cssEase: "linear",
         slidesToShow: 3,
         slidesToScroll: 3,
+        pauseOnHover: true, // Pause autoplay on hover for manual control
+        swipe: true, // Enable swiping for manual control
+        arrows: true,
         initialSlide: 0,
         responsive: [
             {
@@ -179,7 +182,9 @@ export default function Home() {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
+                    speed: 2500,
+                    autoplaySpeed: 1500,
                 }
             }
         ]
@@ -228,7 +233,9 @@ export default function Home() {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
+                    speed: 2000,
+                    autoplaySpeed: 2000,
                 }
             }
         ]
@@ -512,13 +519,13 @@ export default function Home() {
                     </div>
 
                 </div> */}
-                <p className="lg:text-4xl md:text-3xl text-xl mt-10 m-0 kufi font-medium  text-green-600 p-2 ">  من نحن ؟</p>
+                <p className="lg:text-4xl text-3xl  mt-10 m-0 kufi font-medium  text-green-600 p-2 ">  من نحن ؟</p>
 
-                <div className="fourth-data flex">
-                    <div className="left w-1/2"><img src={home} alt="" /></div>
-                    <div className="right w-1/2 p-6">
-                        <p className="cairo text-3xl font-bold">عن "ICam"</p>
-                        <p className="cairo text-xl mt-3">استوديو ICAM هو استوديو تعليمي مبتكر متخصص في إنتاج فيديوهات تعليمية تفاعلية عالية الجودة يقدمها أساتذة متخصصون في مختلف المواد الدراسية. يهدف الاستوديو إلى دعم الطلاب في جميع المراحل الدراسية، من المرحلة الابتدائية وحتى الثانوية العامة، وذلك من خلال توفير شروحات واضحة ومبسطة تسهم في تعزيز الفهم والتحصيل الدراسي.
+                <div className="fourth-data md:flex">
+                    <div className="left md:w-1/2"><img src={home} alt="" /></div>
+                    <div className="right md:w-1/2 p-6">
+                        <p className="cairo md:text-3xl text-2xl font-bold">عن "ICam"</p>
+                        <p className="cairo md:text-xl text-sm mt-3">استوديو ICAM هو استوديو تعليمي مبتكر متخصص في إنتاج فيديوهات تعليمية تفاعلية عالية الجودة يقدمها أساتذة متخصصون في مختلف المواد الدراسية. يهدف الاستوديو إلى دعم الطلاب في جميع المراحل الدراسية، من المرحلة الابتدائية وحتى الثانوية العامة، وذلك من خلال توفير شروحات واضحة ومبسطة تسهم في تعزيز الفهم والتحصيل الدراسي.
 
                             يقع استوديو ICAM في محافظة الفيوم، حيث يسعى إلى تسهيل الوصول إلى التعليم المتكامل والمتميز لجميع الطلاب في المنطقة، باستخدام أحدث التقنيات والوسائل التعليمية.</p>
 
@@ -612,7 +619,7 @@ export default function Home() {
 
             </div>
             <div className="sixth flex flex-col items-center pb-24 mt-9">
-                <p className="cairo lg:text-4xl md:text-3xl text-2xl text-green-700">يقدمها نخبة من اكفئ المعلمين بالمحافظة</p>
+                <p className="cairo lg:text-4xl md:text-3xl text-xl text-green-700">يقدمها نخبة من اكفئ المعلمين بالمحافظة</p>
 
                 <div className="teachers  w-full overflow-hidden pb-12 mx-9 mt-6 ">
                     <Slider {...settings2}>
