@@ -3,6 +3,7 @@ import './App.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from './Components/Layout/Layout';
 import Home from './Pages/Home/Home';
+import TeacherDetails from './Pages/TeacherDetails/TeacherDetails';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       element: <Layout />,
       children: [
         { index: true, element: <Home /> },
+        { path: "/teacher-details", element: <TeacherDetails /> },
 
       ],
     },]);

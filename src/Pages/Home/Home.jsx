@@ -353,8 +353,9 @@ export default function Home() {
                                     <button
                                         className="relative cairo py-2 px-8 mt-4 text-black text-base font-bold nded-full overflow-hidden bg-white rounded-md transition-all duration-400 ease-in-out shadow-md hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-right-full before:w-full before:h-full before:bg-gradient-to-r before:from-green-500 before:to-green-300 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-md hover:before:right-0"
                                     >
-                                        تفاصيل اكتر
-
+                                        <Link to={"/teacher-details"}>
+                                            تفاصيل اكتر
+                                        </Link>
                                     </button>
 
                                 </div>
