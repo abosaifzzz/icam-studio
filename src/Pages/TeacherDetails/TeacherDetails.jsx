@@ -7,14 +7,14 @@ import world from "../../assets/world.png"
 export default function TeacherDetails() {
     return (<>
         <div className="lg:w-4/5 md:w-5/6 mx-auto my-11 md:flex-row flex flex-col gap-4 bg-slate-100 rounded-lg h-fit ">
-            <div dir='rtl' className="right w-full md:hidden  bg-white   h-full ">
-                <div className="teacher-img  relative h-96 w-1/2 border-8 mb-2 border-green-500  rounded-2xl flex justify-center items-center">
+            <div dir='rtl' className="right w-full md:hidden  bg-white  flex justify-center  h-full ">
+                <div className="teacher-img  relative h-72 w-2/3 border-2 mb-2 border-green-500  rounded-2xl flex justify-center items-center">
                     <img className=' rounded-b-md w-full h-full  bottom-0 absolute   ' src={teacher2} alt="" />
 
                 </div>
 
             </div>
-            <div dir='rtl' className="left md:w-3/4 py-7 px-6">
+            <div dir='rtl' className="left md:w-3/4  py-7 px-6">
                 <p className='rounded-xl w-fit p-2 text-center flex gap-1 cairo font-semibold justify-cent items-center text-sm   mb-5 bg-green-400 text-white'>
                     <span><img className='md:w-8 w-5' src={world} alt="" /> </span>
                     تاريخ و جغرافيا
@@ -38,8 +38,8 @@ export default function TeacherDetails() {
 
 
                 </p>
-                <div className="more w-full  flex  flex-wrap">
-                    <div className="degree lg:w-1/4 w-1/2 ">
+                <div className="more w-full  flex gap-2 flex-wrap">
+                    <div className="degree lg:w-1/4 md:w-1/2 w-full ">
                         <div className="label cairo lg:text-lg text-base my-3 text-green-600 font-semibold">الدرجة</div>
                         <div className="degree-logo-and-title flex  gap-2 items-center">
                             <i className="text-gray-400 text-2xl fa-solid fa-certificate"></i>
@@ -49,7 +49,7 @@ export default function TeacherDetails() {
 
 
                     </div>
-                    <div className="uni lg:w-1/4 w-1/2">
+                    <div className="uni lg:w-1/4 md:w-1/2 w-full">
                         <div className="label cairo text-lg my-3 text-green-600 font-semibold">الجامعة</div>
                         <div className="degree-logo-and-title flex  gap-2 items-center">
                             <i className="text-gray-400 text-2xl fa-solid fa-building-columns"></i>
@@ -58,20 +58,20 @@ export default function TeacherDetails() {
                         </div>
 
                     </div>
-                    <div className="tech-years  lg:w-1/4 w-1/2">
+                    <div className="tech-years  lg:w-1/4 md:w-1/2 w-full">
                         <div className="label cairo text-lg my-3 text-green-600 font-semibold">عدد سنين التدريس</div>
                         <div className="degree-logo-and-title flex  gap-2 items-center">
-                            <i className="text-gray-400 text-2xl fa-solid fa-building-columns"></i>
+                            <i className="text-gray-400 text-2xl fa-solid  fa-calendar-check"></i>
                             <span className='kufi text-sm text-gray-600'>  <span className='font-semibold'>اوفلاين:</span> ١٦ سنة</span>
                             <span className='kufi text-sm text-gray-600'>  <span className='font-semibold'>اونلاين:</span> ٤سنين</span>
 
                         </div>
 
                     </div>
-                    <div className="work-school lg:w-1/4 w-1/2">
+                    <div className="work-school lg:w-1/4 md:w-1/2 w-full">
                         <div className="label cairo text-lg my-3 text-green-600 font-semibold"> العمل بالمدارس</div>
                         <div className="degree-logo-and-title flex  gap-2 items-center">
-                            <i className="text-gray-400 text-2xl fa-solid fa-building-columns"></i>
+                            <i className="text-gray-400 text-2xl fa-solid fa-person-chalkboard"></i>
                             <span className='kufi text-sm text-gray-600'>  ماذال</span>
 
                         </div>

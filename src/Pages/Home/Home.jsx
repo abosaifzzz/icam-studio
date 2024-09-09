@@ -558,7 +558,9 @@ export default function Home() {
                                     <span
                                         className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
                                     >
-                                        تفاصيل اكثر
+                                        <Link to={"/teacher-details"}>
+                                            تفاصيل اكثر
+                                        </Link>
                                     </span>
                                 </button>
 
@@ -584,7 +586,9 @@ export default function Home() {
                                     <span
                                         className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
                                     >
-                                        تفاصيل اكثر
+                                        <Link to={"/teacher-details"}>
+                                            تفاصيل اكثر
+                                        </Link>
                                     </span>
                                 </button>
 
@@ -610,7 +614,9 @@ export default function Home() {
                                     <span
                                         className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
                                     >
-                                        تفاصيل اكثر
+                                        <Link to={"/teacher-details"}>
+                                            تفاصيل اكثر
+                                        </Link>
                                     </span>
                                 </button>
 
@@ -636,7 +642,9 @@ export default function Home() {
                                     <span
                                         className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
                                     >
-                                        تفاصيل اكثر
+                                        <Link to={"/teacher-details"}>
+                                            تفاصيل اكثر
+                                        </Link>
                                     </span>
                                 </button>
 
@@ -662,7 +670,9 @@ export default function Home() {
                                     <span
                                         className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
                                     >
-                                        تفاصيل اكثر
+                                        <Link to={"/teacher-details"}>
+                                            تفاصيل اكثر
+                                        </Link>
                                     </span>
                                 </button>
 
@@ -688,7 +698,9 @@ export default function Home() {
                                     <span
                                         className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
                                     >
-                                        تفاصيل اكثر
+                                        <Link to={"/teacher-details"}>
+                                            تفاصيل اكثر
+                                        </Link>
                                     </span>
                                 </button>
 
@@ -714,7 +726,9 @@ export default function Home() {
                                     <span
                                         className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
                                     >
-                                        تفاصيل اكثر
+                                        <Link to={"/teacher-details"}>
+                                            تفاصيل اكثر
+                                        </Link>
                                     </span>
                                 </button>
 
