@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from './Components/Layout/Layout';
 import Home from './Pages/Home/Home';
 import TeacherDetails from './Pages/TeacherDetails/TeacherDetails';
+import SubjectDetails1 from './Pages/SubjectDetails1/SubjectDetails1';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       children: [
         { index: true, element: <Home /> },
         { path: "/teacher-details", element: <TeacherDetails /> },
+        { path: "/subject-details1", element: <SubjectDetails1 /> }
 
       ],
     },]);

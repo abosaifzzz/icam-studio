@@ -1,5 +1,5 @@
 // import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import { useStateContext } from "../../contexts/ContextProvider";
 // import axiosClient from "../../axios";
 // import { useEffect } from "react";
@@ -20,6 +20,10 @@ import screen from "../../assets/screen.png"
 import teacher from "../../assets/teacher.jpg"
 import comp from "../../assets/comp.png"
 import home from "../../assets/home.png"
+import falsfaBg from "../../assets/falsfa2.jpeg"
+import mathBg from '../../assets/pngtree-green-mathematics-subject-for-high-school-9th-grade-algebra-ii-image_735020.jpg'
+import englishBg from "../../assets/english2.jpg"
+import a7ya2Bg from "../../assets/a7ya2.jpg"
 
 
 
@@ -36,6 +40,21 @@ import home from "../../assets/home.png"
 // import LogoutIcon from "@mui/icons-material/Logout";
 
 export default function Home() {
+
+
+    const navigate = useNavigate();
+
+    const handleSubscribeClick = (subjectData) => {
+        navigate('/subject-details1', { state: subjectData });
+    };
+
+    const subjects = [
+        { id: 1, name: 'مادة الفلسفة', img: falsfa, background: falsfaBg },
+        { id: 2, name: 'مادة الرياضة', img: math, background: mathBg },
+        { id: 3, name: 'مادة اللغة الانجليزية', img: english, background: englishBg },
+        { id: 4, name: 'مادة الأحياء', img: physics, background: a7ya2Bg },
+    ];
+
 
     // const [isMenuOpen, setIsMenuOpen] = useState(false);
     // const { user, setUser, setToken, token } = useStateContext({});
@@ -456,81 +475,67 @@ export default function Home() {
 
             <div className="fifth flex flex-col items-center bg-gray-100 py-9 ">
                 <p className="cairo lg:text-4xl md:text-3xl text-2xl text-green-700">المواد الدراسية التي نقدمها</p>
-                <div className="subjects  mt-14 w-5/6 mx-auto md:grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-0 md:gap-4 md:justify-start flex flex-col justify-center items-center mb-28">
+                {/* <div className="subjects  mt-14 w-5/6 mx-auto md:grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-0 md:gap-4 md:justify-start flex flex-col justify-center items-center mb-28">
                     <div className="subject subject-1 flex flex-col justify-center items-center mt-3 lg:w-60 lg:h-60 md:w-72 md:h-72 w-80 h-80">
                         <div className="subject-wrapper">
-                            <div className="subject-data">مادة الفلسفة</div>
+                            <div className="subject-name">مادة الفلسفة</div>
                             <span className="subject-second-data flex flex-col justify-center items-center">
-                                <img src={history} className="w-1/2" alt="" />
-                                <button className="bg-green-500 text-white font-semibold messiri text-lg mt-5 rounded-md p-2">اشترك الأن</button>
+                                <img src={falsfa} className="wsubject-img -1/2" alt="" />
+                                <button className="subscribe bg-green-500 text-white font-semibold messiri text-lg mt-5 rounded-md p-2">اشترك الأن</button>
                             </span>
                         </div>
                     </div>
                     <div className="subject subject-2 flex flex-col justify-center items-center mt-3 lg:w-60 lg:h-60 md:w-72 md:h-72 w-80 h-80">
                         <div className="subject-wrapper">
-                            <div className="subject-data">مادة الرياضة</div>
+                            <div className="subject-name">مادة الرياضة</div>
                             <span className="subject-second-data flex flex-col justify-center items-center">
-                                <img src={history} className="w-1/2" alt="" />
-                                <button className="bg-green-500 text-white font-semibold messiri text-lg mt-5 rounded-md p-2">اشترك الأن</button>
+                                <img src={math} className="w-1subject-img /2" alt="" />
+                                <button className="subscribe bg-green-500 text-white font-semibold messiri text-lg mt-5 rounded-md p-2">اشترك الأن</button>
                             </span>
                         </div>
                     </div>
                     <div className="subject subject-3 flex flex-col justify-center items-center mt-3 lg:w-60 lg:h-60 md:w-72 md:h-72 w-80 h-80">
                         <div className="subject-wrapper">
-                            <div className="subject-data">مادة اللغة الانجليزية</div>
+                            <div className="subject-name">مادة اللغة الانجليزية</div>
                             <span className="subject-second-data flex flex-col justify-center items-center">
-                                <img src={history} className="w-1/2" alt="" />
-                                <button className="bg-green-500 text-white font-semibold messiri text-lg mt-5 rounded-md p-2">اشترك الأن</button>
+                                <img src={english} className="subject-img w-1/2" alt="" />
+                                <button className="subscribe bg-green-500 text-white font-semibold messiri text-lg mt-5 rounded-md p-2">اشترك الأن</button>
                             </span>
                         </div>
                     </div>
                     <div className="subject subject-4 flex flex-col justify-center items-center mt-3 lg:w-60 lg:h-60 md:w-72 md:h-72 w-80 h-80">
                         <div className="subject-wrapper">
-                            <div className="subject-data">مادة الأحياء</div>
+                            <div className="subject-name">مادة الأحياء</div>
                             <span className="subject-second-data flex flex-col justify-center items-center">
-                                <img src={history} className="w-1/2" alt="" />
-                                <button className="bg-green-500 text-white font-semibold messiri text-lg mt-5 rounded-md p-2">اشترك الأن</button>
+                                <img src={physics} className="subject-img w-1/2" alt="" />
+                                <button className="subscribe bg-green-500 text-white font-semibold messiri text-lg mt-5 rounded-md p-2">اشترك الأن</button>
                             </span>
                         </div>
                     </div>
-                    <div className="subject subject-5 flex flex-col justify-center items-center mt-3 lg:w-60 lg:h-60 md:w-72 md:h-72 w-80 h-80">
-                        <div className="subject-wrapper">
-                            <div className="subject-data">مادة علم النفس</div>
-                            <span className="subject-second-data flex flex-col justify-center items-center">
-                                <img src={history} className="w-1/2" alt="" />
-                                <button className="bg-green-500 text-white font-semibold messiri text-lg mt-5 rounded-md p-2">اشترك الأن</button>
-                            </span>
-                        </div>
-                    </div>
-                    <div className="subject subject-6 flex flex-col justify-center items-center mt-3 lg:w-60 lg:h-60 md:w-72 md:h-72 w-80 h-80">
-                        <div className="subject-wrapper">
-                            <div className="subject-data">مادة جيولوجيا</div>
-                            <span className="subject-second-data flex flex-col justify-center items-center">
-                                <img src={history} className="w-1/2" alt="" />
-                                <button className="bg-green-500 text-white font-semibold messiri text-lg mt-5 rounded-md p-2">اشترك الأن</button>
-                            </span>
-                        </div>
-                    </div>
-                    <div className="subject subject-7 flex flex-col justify-center items-center mt-3 lg:w-60 lg:h-60 md:w-72 md:h-72 w-80 h-80">
-                        <div className="subject-wrapper">
-                            <div className="subject-data">مادة بيولوجي</div>
-                            <span className="subject-second-data flex flex-col justify-center items-center">
-                                <img src={history} className="w-1/2" alt="" />
-                                <button className="bg-green-500 text-white font-semibold messiri text-lg mt-5 rounded-md p-2">اشترك الأن</button>
-                            </span>
-                        </div>
-                    </div>
-                    <div className="subject subject-8 flex flex-col justify-center items-center mt-3 lg:w-60 lg:h-60 md:w-72 md:h-72 w-80 h-80">
-                        <div className="subject-wrapper">
-                            <div className="subject-data">مادة الجغرافيا</div>
-                            <span className="subject-second-data flex flex-col justify-center items-center">
-                                <img src={history} className="w-1/2" alt="" />
-                                <button className="bg-green-500 text-white font-semibold messiri text-lg mt-5 rounded-md p-2">اشترك الأن</button>
-                            </span>
-                        </div>
-                    </div>
-                </div>
 
+                </div> */}
+                <div className="subjects mt-14 w-5/6 mx-auto md:grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-4 lg:gap-0 md:gap-4 flex flex-col justify-center items-center mb-28">
+                    {subjects.map((subject) => (
+                        <div
+                            key={subject.id}
+                            className="subject flex flex-col justify-center items-center mt-3 lg:w-60 lg:h-60 md:w-72 md:h-72 w-80 h-80"
+                            style={{ backgroundImage: `url(${subject.background})`, backgroundSize: 'cover' }}
+                            onClick={() => handleSubscribeClick(subject)}
+                        >
+                            <div className="subject-wrapper" >
+                                <div className="subject-name">{subject.name}</div>
+                                <span className="subject-second-data bg-emerald-300 flex flex-col justify-center items-center">
+                                    <img src={subject.img} className="subject-img w-1/2" alt={subject.name} />
+                                    <button
+                                        className="subscribe bg-green-500 text-white font-semibold messiri text-lg mt-5 rounded-md p-2"
+                                    >
+                                        اشترك الأن
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    ))}
+                </div>
 
             </div>
             <div className="sixth flex flex-col items-center pb-24 mt-9">

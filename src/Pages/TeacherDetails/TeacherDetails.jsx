@@ -1,6 +1,9 @@
 import React from 'react'
 import teacher2 from "../../assets/teacher2.png"
 import world from "../../assets/world.png"
+import goeenglish from "../../assets/goeenglish.jpg"
+
+import geoarabic from "../../assets/geoarabic.jpg"
 
 
 
@@ -97,8 +100,8 @@ export default function TeacherDetails() {
 
             <div dir='rtl' className="courses-selected flex md:flex-row flex-col gap-3 rounded-xl mt-4 lg:w-fit md:w-5/6  mx-20  lg:px-40  p-8 mb-11 bg-green-700">
                 <div className="teacher-subject w-80  h-80 rounded-md flex flex-col justify-center items-center bg-slate-200">
-                    <div className="teacher-img  relative h-2/3 w-2/3 border-8 border-green-500  rounded-full flex justify-center items-center">
-                        <img className=' rounded-full  bottom-0  w-64 h-56 absolute   ' src={teacher2} alt="" />
+                    <div className="teacher-img   h-2/3 w-2/3 border-8 border-blue-500  rounded-full flex justify-center items-center">
+                        <img className='  h-full rounded-full  w-full bg-gray-400    ' src={geoarabic} alt="" />
 
                     </div>
                     <p className='cairo mt-1 font-semibold'>تاريخ و جغرافيا (لغة عربية)</p>
@@ -106,9 +109,9 @@ export default function TeacherDetails() {
 
 
                 </div>
-                <div className="teacher-subject w-80 h-80 rounded-md flex flex-col justify-center items-center bg-slate-200">
-                    <div className="teacher-img  relative h-2/3 w-2/3 border-8 border-green-500  rounded-full flex justify-center items-center">
-                        <img className=' rounded-full  bottom-0  w-64 h-56 absolute   ' src={teacher2} alt="" />
+                <div className="teacher-subject w-80  h-80 rounded-md flex flex-col justify-center items-center bg-slate-200">
+                    <div className="teacher-img   h-2/3 w-2/3 border-8 border-blue-500  rounded-full flex justify-center items-center">
+                        <img className='  h-full rounded-full  w-full bg-gray-400    ' src={goeenglish} alt="" />
 
                     </div>
                     <p className='cairo mt-1 font-semibold'>تاريخ و جغرافيا (لغة انجليزية)</p>
@@ -116,6 +119,7 @@ export default function TeacherDetails() {
 
 
                 </div>
+
 
 
             </div>

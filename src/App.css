@@ -271,14 +271,14 @@ transition: transform 0.3s ease-in-out;
   transition: all 0.5s;
 }
 
-.subject .subject-data {
+.subject .subject-name {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .subject .subject-wrapper,
-.subject .subject-data,
+.subject .subject-name,
 .subject .subject-second-data {
   overflow: hidden;
   position: absolute;
@@ -291,11 +291,11 @@ transition: transform 0.3s ease-in-out;
 
 }
 
-.subject .subject-data {
+.subject .subject-name {
   top: 0;
 }
 
-.subject .subject-data,
+.subject .subject-name,
 .subject .subject-second-data {
   transition: top 0.5s;
 }
@@ -316,7 +316,7 @@ transition: transform 0.3s ease-in-out;
   background: #e8fff6;
 }
 
-.subject:hover .subject-data {
+.subject:hover .subject-name {
   top: -100%;
 }
 
