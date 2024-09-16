@@ -524,7 +524,7 @@ export default function Home() {
                         >
                             <div className="subject-wrapper" >
                                 <div className="subject-name">{subject.name}</div>
-                                <span className="subject-second-data bg-emerald-300 flex flex-col justify-center items-center">
+                                <span className="subject-second-data bg-emerald-300 flex rounded-xl flex-col justify-center items-center">
                                     <img src={subject.img} className="subject-img w-1/2" alt={subject.name} />
                                     <button
                                         className="subscribe bg-green-500 text-white font-semibold messiri text-lg mt-5 rounded-md p-2"

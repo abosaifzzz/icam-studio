@@ -3,6 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 .cairo {
   font-family: "Cairo", sans-serif;
   font-optical-sizing: auto;

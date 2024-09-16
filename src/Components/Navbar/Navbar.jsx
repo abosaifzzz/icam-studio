@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,9 +11,9 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="bg-white shadow-lg py-2.5 dark:bg-gray-900">
+            <nav className="bg-white m-4 shadow-lg py-2.5 dark:bg-gray-900">
                 <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
-                    <a href="#" className="flex items-center">
+                    <a className="flex items-center">
                         <span className="self-center text-2xl font-semibold whitespace-nowrap text-green-600">ICam</span>
                     </a>
                     <div className="flex items-center lg:order-2">
@@ -41,20 +43,20 @@ export default function Navbar() {
                     <div className={`items-center justify-between w-full lg:flex lg:w-auto lg:order-1 ${isMenuOpen ? 'block' : 'hidden'}`} id="mobile-menu-2">
                         <ul dir='rtl' className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                             <li>
-                                <a href="#"
+                                <Link to={"/"}
                                     className="block py-2 pl-3 pr-4 me-3 cairo text-gray-700 rounded lg:bg-transparent lg:hover:text-green-600 lg:p-0 "
-                                    aria-current="page">الرئيسية</a>
+                                    aria-current="page">الرئيسية</Link>
                             </li>
                             <li>
-                                <a href="#"
-                                    className="block py-2 pl-3 pr-4 cairo text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-600 lg:p-0 ">من نحن</a>
+                                <Link to="/#about"
+                                    className="block py-2 pl-3 pr-4 cairo text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-600 lg:p-0 ">من نحن</Link>
                             </li>
                             <li>
-                                <a href="#"
+                                <a
                                     className="block py-2 pl-3 pr-4 cairo text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-600 lg:p-0 ">المعلمين</a>
                             </li>
                             <li>
-                                <a href="#"
+                                <a
                                     className="block py-2 pl-3 pr-4 cairo text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-green-600 lg:p-0 ">تواصل معنا</a>
                             </li>
                         </ul>
