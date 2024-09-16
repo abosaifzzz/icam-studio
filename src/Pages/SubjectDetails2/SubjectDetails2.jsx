@@ -48,14 +48,19 @@ export default function SubjectDetails2() {
                         <div className="subject-name">
                             <p className='cairo font-medium  text-3xl'>مادة اللغة الأنجليزية</p>
                         </div>
-                        <div className="subject-and-instructor-img relative lg:w-1/3 w-2/3 mt-4 rounded-lg shadow-md shadow-green-300 ">
+                        <div className="subject-and-instructor-img relative lg:w-1/2 md:w-4/5 w-full mt-4 rounded-xl shadow-md shadow-green-300 ">
                             <div className="subject-img">
                                 <img className='w-full' src={english3} alt="" />
                             </div>
                             <div className="instructor-img absolute bottom-2 left-3">
-                                <img className='w-24 h-24 rounded-full border-2 border-green-300' src={teacher3} alt="" />
+                                <img className='md:w-24 md:h-24 w-20 h-20 rounded-full border-2 border-green-300' src={teacher3} alt="" />
+                            </div>
+                            <div className="instructor-name absolute right-0 bottom-0 bg-green-700 text-white p-2 px-4 rounded-br-xl rounded-tl-xl">
+                                <p className='cairo  text-lg '>أ/ محمد أبوسيف</p>
+
                             </div>
                         </div>
+
                         <div className="subject-description mt-2">
                             <p className='md:text-2xl text-lg text-green-900 messiri mt-5 font-semibold'>ما الذي سنقدمه في هذه المادة ؟</p>
                             <p className='lg:text-lg my-2 md:w-3/4 '>في مادة اللغة الإنجليزية، سيتم التركيز على تطوير مهارات الطلاب في القراءة، الكتابة، التحدث، والاستماع...</p>
@@ -103,7 +108,7 @@ export default function SubjectDetails2() {
                                             </button>
                                         </div>
                                     </div>
-                                    <div className={`lesson-description ${activeLesson === index ? '' : 'hidden'}`}>
+                                    <div className={`lesson-description overflow-hidden transition-all duration-500 ease-in-out ${activeLesson === index ? 'max-h-screen' : 'max-h-0'}`}>
                                         <p className="text-sm lg:w-2/3 w-full mt-2 font-sans">{lesson.description}</p>
                                         <p>3 مواضيع | 1{' '}
                                             <span className="text-green-700 hover:text-green-500 cursor-pointer underline underline-offset-4">
