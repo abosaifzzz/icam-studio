@@ -7,4 +7,13 @@ export default defineConfig({
   build: {
     outDir: "dist", // Ensure this is set to 'dist' or change to 'build' if needed
   },
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://laravel.educationstudio.online",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
 });

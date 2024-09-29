@@ -24,35 +24,49 @@ import falsfaBg from "../../assets/falsfa2.jpeg"
 import mathBg from '../../assets/pngtree-green-mathematics-subject-for-high-school-9th-grade-algebra-ii-image_735020.jpg'
 import englishBg from "../../assets/english2.jpg"
 import a7ya2Bg from "../../assets/a7ya2.jpg"
-
-
-
-
-
-
-
-
-
-
-
-
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { Helmet } from "react-helmet";
 
 // import LogoutIcon from "@mui/icons-material/Logout";
 
 export default function Home() {
-
-
+    // const [data, setData] = useState(null);
+    // const [loading, setLoading] = useState(true);
+    // const [error, setError] = useState(null);
     const navigate = useNavigate();
 
     const handleSubscribeClick = (subjectData) => {
         navigate('/subject-details1', { state: subjectData });
     };
+    // useEffect(() => {
+    //     axios.get('https://laravel.educationstudio.online/api/home')
+    //         .then((response) => {
+    //             setData(response.data);
+    //             setLoading(false);
+    //             console.log(data);
+
+    //         })
+    //         .catch((error) => {
+    //             setError(error);
+    //             setLoading(false);
+    //         });
+    // }, []);
+
+    // if (loading) {
+    //     return <div>Loading...</div>;
+    // }
+
+    // if (error) {
+    //     return <div>Error: {error.message}</div>;
+    // }
+
 
     const subjects = [
         { id: 1, name: 'مادة الفلسفة', img: falsfa, background: falsfaBg },
         { id: 2, name: 'مادة الرياضة', img: math, background: mathBg },
-        { id: 3, name: 'مادة اللغة الانجليزية', img: english, background: englishBg },
-        { id: 4, name: 'مادة الأحياء', img: physics, background: a7ya2Bg },
+        // { id: 3, name: 'مادة اللغة الانجليزية', img: english, background: englishBg },
+        // { id: 4, name: 'مادة الأحياء', img: physics, background: a7ya2Bg },
     ];
 
 
@@ -170,16 +184,57 @@ export default function Home() {
     //     }, [user.id]);
     // }
 
+    const teacherData = [
+        {
+            name: "أ/ هشام ابو السعود",
+            subject: "مادة الفلسفة",
+            image: teacher, // Ensure you have the correct image reference
+        },
+
+        {
+            name: "أ/ محمد السعود",
+            subject: "مادة الفلسفة",
+            image: teacher, // Ensure you have the correct image reference
+        },
+
+        {
+            name: "أ/ احمددددد ",
+            subject: "مادة الفلسفة",
+            image: teacher, // Ensure you have the correct image reference
+        },
+
+        {
+            name: "أ/ عمااار ابو السعود",
+            subject: "مادة الفلسفة",
+            image: teacher, // Ensure you have the correct image reference
+        },
+        {
+            name: "أ/اشرررف السعود",
+            subject: "مادة الفلسفة",
+            image: teacher, // Ensure you have the correct image reference
+        },
+
+
+    ];
+    const slidesData = [
+        { imgSrc: falsfa, title: "مادة الفلسفة", teacher: "أ/ هشام ابو السعود" },
+        { imgSrc: french, title: "مادة اللغة الفرنسية", teacher: "مسيو/ هاني اشرف" },
+        { imgSrc: chemistry, title: "مادة الكيمياء", teacher: "أ/ محمود البحيري" },
+        { imgSrc: history, title: "مادة التاريخ", teacher: "أ/ رامي مسعود" },
+        { imgSrc: physics, title: "مادة الفيزياء", teacher: "أ/ خالد عمر" },
+        { imgSrc: english, title: "مادة اللغة الأنجليزية", teacher: "أ/ احمد العشيري" },
+        { imgSrc: math, title: "مادة الرياضة", teacher: "أ/ محمود عبدالرحمن" }
+    ];
 
     const settings = {
         dots: true,
-        infinite: true,
+        infinite: slidesData.length > 2,
         autoplay: true,
         speed: 500,
         autoplaySpeed: 4000,
         cssEase: "linear",
         slidesToShow: 3, // Default number of slides to show
-        slidesToScroll: 3, // Number of slides to scroll
+        slidesToScroll: 2, // Number of slides to scroll
         pauseOnHover: true, // Pause on hover
         arrows: true, // Enable arrows for manual control
         responsive: [
@@ -209,28 +264,19 @@ export default function Home() {
         ]
     };
 
-    const slidesData = [
-        { imgSrc: falsfa, title: "مادة الفلسفة", teacher: "أ/ هشام ابو السعود" },
-        { imgSrc: french, title: "مادة اللغة الفرنسية", teacher: "مسيو/ هاني اشرف" },
-        { imgSrc: chemistry, title: "مادة الكيمياء", teacher: "أ/ محمود البحيري" },
-        { imgSrc: history, title: "مادة التاريخ", teacher: "أ/ رامي مسعود" },
-        { imgSrc: physics, title: "مادة الفيزياء", teacher: "أ/ خالد عمر" },
-        { imgSrc: english, title: "مادة اللغة الأنجليزية", teacher: "أ/ احمد العشيري" },
-        { imgSrc: math, title: "مادة الرياضة", teacher: "أ/ محمود عبدالرحمن" }
-    ];
-    // Slider settings
 
+    // Slider settings
     const settings2 = {
         dots: true,
-        infinite: true,
+        infinite: teacherData.length > 2, // Disable infinite if less than 3 slides
         autoplay: true,
         speed: 500,
         autoplaySpeed: 4000,
         cssEase: "linear",
         slidesToShow: 3,
-        slidesToScroll: 3,
-        pauseOnHover: true, // Pause on hover
-        arrows: true, // Enable arrows for manual control
+        slidesToScroll: 2,
+        pauseOnHover: true,
+        arrows: true,
         responsive: [
             {
                 breakpoint: 1024,
@@ -259,6 +305,48 @@ export default function Home() {
 
     return (<>
 
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>E-learning Platform in Egypt | Education Studio</title>
+            <meta
+                name="description"
+                content="Join Education Studio, Egypt's leading e-learning platform offering courses in a variety of subjects. Learn at your own pace and enhance your skills today."
+            />
+            <meta
+                name="keywords"
+                content="e-learning, online education, courses, Egypt, learn online, Education Studio, EducationStudio, skills, online courses"
+            />
+            <link rel="canonical" href="https://educationstudio.online" />
+            <meta
+                property="og:title"
+                content="Education Studio | E-learning Platform in Egypt"
+            />
+            <meta
+                property="og:description"
+                content="Access a variety of online courses with Egypt's top e-learning platform. Enhance your skills and knowledge at your convenience."
+            />
+            <meta property="og:url" content="https://educationstudio.online" />
+            <meta
+                property="og:image"
+                content="https://educationstudio.online/images/og-image.jpg"
+            />
+            <meta property="og:type" content="website" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta
+                name="twitter:title"
+                content="Education Studio | E-learning Platform in Egypt"
+            />
+            <meta
+                name="twitter:description"
+                content="Join our online learning platform and start your educational journey with top instructors."
+            />
+            <meta
+                name="twitter:image"
+                content="https://educationstudio.online/images/twitter-image.jpg"
+            />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Helmet>
+
         <div dir="rtl" className="all w-full mt-10 mx-auto  ">
 
 
@@ -268,12 +356,10 @@ export default function Home() {
                     <img className="w-full self-center" src={vector} alt="" />
                 </div>
                 <div className="right md:w-1/2 w-full  md:p-12 p-3">
-
                     <p className="lg:text-5xl md:text-3xl text-3xl cairo font-semibold">    تعلم, تطور ,<span className="text-green-500">وفر وقتك</span> </p>
                     <p className="mt-10 lg:text-5xl md:text-3xl text-2xl cairo font-medium">منصة تعليمية متكاملة </p>
                     <p className="mt-10 lg:text-5xl md:text-3xl text-2xl    cairo text-white font-semibold p-2 bg-[#2dbc56] w-fit pb-4">فـي مـكـان واحــــــــد </p>
                     <p className="mt-6 lg:text-3xl md:text-xl text-xl font-bold cairo">    و لأول مرة  <span className="text-green-700"> بالفيوم</span></p>
-
 
                     {/* <a dir="rtl" className="btn-3 mt-5 p-3 cairo  px-6 rounded-md lg:text-xl text-xl" href="#">
                         ابدأ الأن
@@ -360,14 +446,6 @@ export default function Home() {
                                     </div>
                                     <p className="messiri z-1 text-xl mt-3 font-semibold">{slide.title}</p>
                                     <p className="kufi z-1">{slide.teacher}</p>
-                                    {/* <div className="btn-4 mt-4">
-                                        <div className="button-wrapper">
-                                            <div className="text">تفاصيل أكثر</div>
-                                            <span className="icon">
-                                                <i className="fa-solid fa-arrow-right"></i>
-                                            </span>
-                                        </div>
-                                    </div> */}
 
                                     <button
                                         className="relative cairo py-2 px-8 mt-4 text-black text-base font-bold nded-full overflow-hidden bg-white rounded-md transition-all duration-400 ease-in-out shadow-md hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-right-full before:w-full before:h-full before:bg-gradient-to-r before:from-green-500 before:to-green-300 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-md hover:before:right-0"
@@ -514,7 +592,7 @@ export default function Home() {
                     </div>
 
                 </div> */}
-                <div className="subjects mt-14 w-5/6 mx-auto md:grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-4 lg:gap-0 md:gap-4 flex flex-col justify-center items-center mb-28">
+                <div className="subjects mt-14  w-fit mx-auto flex flex-col items-center md:grid md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-4 lg:gap-4 md:gap-4  mb-28">
                     {subjects.map((subject) => (
                         <div
                             key={subject.id}
@@ -543,206 +621,25 @@ export default function Home() {
 
                 <div className="teachers  w-full overflow-hidden pb-12 mx-9 mt-6 ">
                     <Slider {...settings2}>
-
-
-                        <div className="slide   my-5  bg-transparent px-9 ">
-                            <div className="teacher py-6 bg- shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
-                                <div className="teacher-img w-28 h-28   ">
-                                    <img className="rounded-full w-full h-full" src={teacher} alt="" />
+                        {teacherData.map((teacher, index) => (
+                            <div key={index} className="slide my-5 bg-transparent px-9">
+                                <div className="teacher py-6 bg- shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden h-full">
+                                    <div className="teacher-img w-28 h-28">
+                                        <img className="rounded-full w-full h-full" src={teacher.image} alt={teacher.name} />
+                                    </div>
+                                    <p className="messiri z-1 text-xl mt-3 font-semibold">{teacher.name}</p>
+                                    <p className="kufi text-green-700">{teacher.subject}</p>
+                                    <button className="mt-5 relative inline-flex h-12 active:scale-95 transition overflow-hidden rounded-lg p-[1px] focus:outline-none">
+                                        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#36ff79_0%,#0fedde_50%,#e3ff8f_100%)]"></span>
+                                        <span className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium backdrop-blur-3xl gap-2 undefined">
+                                            <Link to={"/teacher-details"}>
+                                                تفاصيل اكثر
+                                            </Link>
+                                        </span>
+                                    </button>
                                 </div>
-
-                                <p className="messiri z-1 text-xl  mt-3 font-semibold ">أ/ هشام ابو السعود</p>
-                                <p className="kufi text-green-700">مادة الفلسفة</p>
-                                <button
-                                    className="mt-5 relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none"
-                                >
-                                    <span
-                                        className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#36ff79_0%,#0fedde_50%,#e3ff8f_100%)]"
-                                    >
-                                    </span>
-                                    <span
-                                        className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
-                                    >
-                                        <Link to={"/teacher-details"}>
-                                            تفاصيل اكثر
-                                        </Link>
-                                    </span>
-                                </button>
-
                             </div>
-
-
-                        </div>
-                        <div className="slide   my-5  bg-transparent px-9 ">
-                            <div className="teacher py-6 bg- shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
-                                <div className="teacher-img w-28 h-28   ">
-                                    <img className="rounded-full w-full h-full" src={teacher} alt="" />
-                                </div>
-
-                                <p className="messiri z-1 text-xl  mt-3 font-semibold ">مسيو/ هاني اشرف</p>
-                                <p className="kufi text-green-700">مادة اللغة الفرنسية</p>
-                                <button
-                                    className="mt-5 relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none"
-                                >
-                                    <span
-                                        className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#36ff79_0%,#0fedde_50%,#e3ff8f_100%)]"
-                                    >
-                                    </span>
-                                    <span
-                                        className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
-                                    >
-                                        <Link to={"/teacher-details"}>
-                                            تفاصيل اكثر
-                                        </Link>
-                                    </span>
-                                </button>
-
-                            </div>
-
-
-                        </div>
-                        <div className="slide   my-5  bg-transparent px-9 ">
-                            <div className="teacher py-6 bg- shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
-                                <div className="teacher-img w-28 h-28   ">
-                                    <img className="rounded-full w-full h-full" src={teacher} alt="" />
-                                </div>
-
-                                <p className="messiri z-1 text-xl  mt-3 font-semibold ">أ/ محمود البحيري </p>
-                                <p className="kufi text-green-700">مادة الكيمياء    </p>
-                                <button
-                                    className="mt-5 relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none"
-                                >
-                                    <span
-                                        className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#36ff79_0%,#0fedde_50%,#e3ff8f_100%)]"
-                                    >
-                                    </span>
-                                    <span
-                                        className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
-                                    >
-                                        <Link to={"/teacher-details"}>
-                                            تفاصيل اكثر
-                                        </Link>
-                                    </span>
-                                </button>
-
-                            </div>
-
-
-                        </div>
-                        <div className="slide   my-5  bg-transparent px-9 ">
-                            <div className="teacher py-6 bg- shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
-                                <div className="teacher-img w-28 h-28   ">
-                                    <img className="rounded-full w-full h-full" src={teacher} alt="" />
-                                </div>
-
-                                <p className="messiri z-1 text-xl  mt-3 font-semibold ">أ/ رامي مسعود</p>
-                                <p className="kufi text-green-700">مادة التاريخ</p>
-                                <button
-                                    className="mt-5 relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none"
-                                >
-                                    <span
-                                        className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#36ff79_0%,#0fedde_50%,#e3ff8f_100%)]"
-                                    >
-                                    </span>
-                                    <span
-                                        className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
-                                    >
-                                        <Link to={"/teacher-details"}>
-                                            تفاصيل اكثر
-                                        </Link>
-                                    </span>
-                                </button>
-
-                            </div>
-
-
-                        </div>
-                        <div className="slide   my-5  bg-transparent px-9 ">
-                            <div className="teacher py-6 bg- shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
-                                <div className="teacher-img w-28 h-28   ">
-                                    <img className="rounded-full w-full h-full" src={teacher} alt="" />
-                                </div>
-
-                                <p className="messiri z-1 text-xl  mt-3 font-semibold ">أ/ خالد عمر</p>
-                                <p className="kufi text-green-700">مادة الفيزياء</p>
-                                <button
-                                    className="mt-5 relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none"
-                                >
-                                    <span
-                                        className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#36ff79_0%,#0fedde_50%,#e3ff8f_100%)]"
-                                    >
-                                    </span>
-                                    <span
-                                        className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
-                                    >
-                                        <Link to={"/teacher-details"}>
-                                            تفاصيل اكثر
-                                        </Link>
-                                    </span>
-                                </button>
-
-                            </div>
-
-
-                        </div>
-                        <div className="slide   my-5  bg-transparent px-9 ">
-                            <div className="teacher py-6 bg- shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
-                                <div className="teacher-img w-28 h-28   ">
-                                    <img className="rounded-full w-full h-full" src={teacher} alt="" />
-                                </div>
-
-                                <p className="messiri z-1 text-xl  mt-3 font-semibold ">أ/ احمد العشيري</p>
-                                <p className="kufi text-green-700">مادة اللغة الأنجليزية</p>
-                                <button
-                                    className="mt-5 relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none"
-                                >
-                                    <span
-                                        className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#36ff79_0%,#0fedde_50%,#e3ff8f_100%)]"
-                                    >
-                                    </span>
-                                    <span
-                                        className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
-                                    >
-                                        <Link to={"/teacher-details"}>
-                                            تفاصيل اكثر
-                                        </Link>
-                                    </span>
-                                </button>
-
-                            </div>
-
-
-                        </div>
-                        <div className="slide   my-5  bg-transparent px-9 ">
-                            <div className="teacher py-6 bg- shadow-xl relative rounded-lg flex flex-col items-center justify-center overflow-hidden  h-full ">
-                                <div className="teacher-img w-28 h-28   ">
-                                    <img className="rounded-full w-full h-full" src={teacher} alt="" />
-                                </div>
-
-                                <p className="messiri z-1 text-xl  mt-3 font-semibold ">أ/ محمود عبدالرحمن</p>
-                                <p className="kufi text-green-700">مادة الرياضة</p>
-                                <button
-                                    className="mt-5 relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none"
-                                >
-                                    <span
-                                        className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#36ff79_0%,#0fedde_50%,#e3ff8f_100%)]"
-                                    >
-                                    </span>
-                                    <span
-                                        className="cairo inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-white px-7 text-sm font-medium  backdrop-blur-3xl gap-2 undefined"
-                                    >
-                                        <Link to={"/teacher-details"}>
-                                            تفاصيل اكثر
-                                        </Link>
-                                    </span>
-                                </button>
-
-                            </div>
-
-
-                        </div>
-
-
+                        ))}
                     </Slider>
 
 
